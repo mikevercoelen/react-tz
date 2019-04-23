@@ -2,6 +2,7 @@ import React, {
   useState,
   useRef
 } from 'react'
+import PropTypes from 'prop-types'
 import styles from './TimezoneSelect.scss'
 import ReactSelect, {
   components,
@@ -126,6 +127,14 @@ const Option = ({ children, ...props }) => {
   )
 }
 
+Option.propTypes = {
+  children: PropTypes.node,
+  innerProps: PropTypes.shape({
+    onMouseMove: PropTypes.func,
+    onMouseOver: PropTypes.func
+  })
+}
+
 const Group = ({ children, label }) => {
   return (
     <div className={styles.group}>
@@ -137,6 +146,11 @@ const Group = ({ children, label }) => {
       </div>
     </div>
   )
+}
+
+Group.propTypes = {
+  children: PropTypes.node,
+  label: PropTypes.string
 }
 
 const Svg = p => (
@@ -190,6 +204,12 @@ const Button = ({
   )
 }
 
+Button.propTypes = {
+  isSelected: PropTypes.bool,
+  onClick: PropTypes.func,
+  children: PropTypes.node
+}
+
 const Dropdown = ({
   children,
   isOpen,
@@ -209,6 +229,13 @@ const Dropdown = ({
       onClick={onClose} />
   </div>
 )
+
+Dropdown.propTypes = {
+  children: PropTypes.node,
+  isOpen: PropTypes.bool,
+  target: PropTypes.node,
+  onClose: PropTypes.func
+}
 
 const getOptionFromValue = (options, value) => {
   for (const timezoneGroup of options) {
@@ -300,6 +327,11 @@ const TimezoneSelect = ({
       </Dropdown>
     </div>
   )
+}
+
+TimezoneSelect.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 }
 
 export default TimezoneSelect
