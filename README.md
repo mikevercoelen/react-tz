@@ -4,6 +4,9 @@ An ultimate timezone picker for [React](https://reactjs.com). Built on top of [r
 
 ## Demo
 
+[<img src="https://raw.githubusercontent.com/mikevercoelen/react-tz/master/usage.gif" class="logo" height="484" width="472"/>](http://mikevercoelen.github.io/react-tz/)
+
+
 [mikevercoelen.github.io/react-tz](http://mikevercoelen.github.io/react-tz/)
 
 ## Requirements
