@@ -1,5 +1,5 @@
 {
-  "name": "react-tz",
+  "name": "stamp-react-tz",
   "version": "1.1.0",
   "description": "A beautiful, clean and UX friendly timezone selector",
   "main": "./lib/index.js",
@@ -9,15 +9,15 @@
   "scripts": {
     "analyze": "webpack -p --bail --profile --json > stats.json && webpack-bundle-analyzer stats.json",
     "build": "npm run build:lib && npm run build:es && npm run build:umd && npm run build:umd:min",
-    "build:lib": "babel src --out-dir lib",
-    "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
+    "build:lib": "babel src --copy-files --out-dir lib",
+    "build:es": "cross-env BABEL_ENV=es babel src --copy-files --out-dir es",
     "build:umd": "cross-env NODE_ENV=development webpack --env.development ./src/index.js --output-filename=react-tz.js",
     "build:umd:min": "cross-env NODE_ENV=production webpack --env.production ./src/index.js --output-filename=react-tz.min.js",
     "dev": "npm-watch",
     "clean": "rimraf dist lib es",
     "lint": "eslint src examples",
     "lint:fix": "eslint src examples --fix",
-    "prepublishOnly": "npm run lint:fix && npm run clean && npm run build && npm run deploy",
+    "prepublishOnly": "npm run lint:fix && npm run clean && npm run build",
     "examples": "cross-env NODE_ENV=development webpack-dev-server --config=./examples/webpack.config.js",
     "examples:build": "cross-env NODE_ENV=production webpack --config=./examples/webpack.config.js",
     "deploy": "npm run examples:build && gulp deploy",
@@ -137,8 +137,8 @@
   },
   "files": [
     "README.md",
-    "examples",
-    "scripts",
-    "src"
+    "es",
+    "lib",
+    "dist"
   ]
 }
