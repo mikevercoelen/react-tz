@@ -160,7 +160,8 @@ const Svg = p => (
     viewBox='0 0 24 24'
     focusable='false'
     role='presentation'
-    {...p} />
+    {...p}
+  />
 )
 
 const DropdownIndicator = () => (
@@ -185,7 +186,8 @@ const Button = ({
       onClick={onClick}
       className={cx(styles.btn, {
         [styles.btnIsSelected]: isSelected
-      })}>
+      })}
+    >
       <div className={styles.btnContent}>
         <div className={styles.btnLabel}>
           {children}
@@ -219,14 +221,16 @@ const Dropdown = ({
   <div
     className={cx(styles.dropdown, {
       [styles.isOpen]: isOpen
-    })}>
+    })}
+  >
     {target}
     <div className={styles.menu}>
       {children}
     </div>
     <div
       className={styles.blanket}
-      onClick={onClose} />
+      onClick={onClose}
+    />
   </div>
 )
 
@@ -297,10 +301,12 @@ const TimezoneSelect = ({
           <Button
             isSelected={isOpen}
             onClick={toggleOpen}
-            primary>
+            primary
+          >
             {currentOption ? currentOption.label : 'Select a timezone'}
           </Button>
-        )}>
+        )}
+      >
         <ReactSelect
           ref={selectElement}
           noOptionsMessage={handleNoOptions}

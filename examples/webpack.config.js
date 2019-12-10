@@ -23,8 +23,9 @@ rules.push({
       options: {
         importLoaders: 2,
         sourceMap: true,
-        modules: true,
-        localIdentName: '[name]-[local]-[hash:base64:5]'
+        modules: {
+          localIdentName: '[name]-[local]-[hash:base64:5]'
+        }
       }
     },
     {

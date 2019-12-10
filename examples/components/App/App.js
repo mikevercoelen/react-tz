@@ -19,7 +19,8 @@ const App = () => {
         <div className={styles.selector}>
           <TimezoneSelect
             onChange={setTimezone}
-            value={timezone} />
+            value={timezone}
+          />
         </div>
       </div>
     </div>
