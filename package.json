@@ -137,8 +137,8 @@
   },
   "files": [
     "README.md",
-    "es",
-    "lib",
-    "dist"
+    "examples",
+    "scripts",
+    "src"
   ]
 }
