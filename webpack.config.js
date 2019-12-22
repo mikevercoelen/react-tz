@@ -1,5 +1,4 @@
 const webpack = require('webpack')
-const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const env = process.env.NODE_ENV
@@ -26,8 +25,9 @@ rules.push({
       options: {
         importLoaders: 2,
         sourceMap: true,
-        modules: true,
-        localIdentName: '[name]-[local]-[hash:base64:5]'
+        modules: {
+          localIdentName: '[name]-[local]-[hash:base64:5]'
+        }
       }
     },
     {
@@ -48,10 +48,10 @@ rules.push({
 const config = {
   mode: env,
   externals: {
-    'react': 'react',
+    react: 'react',
     'react-dom': 'reactDOM',
     'react-select': 'ReactSelect',
-    'moment': 'moment',
+    moment: 'moment',
     'moment-timezone': 'moment-timezone'
   },
   module: {
